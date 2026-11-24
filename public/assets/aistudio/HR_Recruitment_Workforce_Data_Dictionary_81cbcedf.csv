@@ -1,0 +1,19 @@
+No.,Column Name,Data Type,Description
+1,Employee ID,Text,Unique identification number assigned to each employee.
+2,Employee Name,Text,Full name of the employee.
+3,Department,Text,Department where the employee works.
+4,Job Level,Text,Employee's position or seniority level.
+5,Location,Text,Geographical location or office where the employee is based.
+6,Work Arrangement,Text,Employee's working arrangement.
+7,Work Status,Text,Employee's current work or availability status.
+8,Hire Date,Date,Date the employee officially joined the organisation.
+9,Last Updated,Date,Date the employee's record was last refreshed or updated.
+10,Total Tasks,Whole Number,Total number of tasks assigned to an employee.
+11,Completed Tasks,Whole Number,Number of assigned tasks successfully completed.
+12,Pending Tasks,Whole Number,"Number of assigned tasks yet to be completed and not classified as overdue, subject to the dataset's task definitions."
+13,Overdue Tasks,Whole Number,Number of tasks that have passed their assigned deadlines without completion.
+14,Engagement Score,Whole Number,"Numerical score representing employee engagement, based on the organisation's assessment scale."
+15,Workload Level,Text,Classification of an employee's current workload.
+16,Leave Days Remaining,Whole Number,Number of unused leave days available to the employee.
+17,Attention Status,Text,Indicates whether an employee requires management or HR intervention.
+18,Attention Reason,Text,Explains the factor or factors responsible for flagging an employee for attention.

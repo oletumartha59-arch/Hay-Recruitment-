@@ -1,0 +1,6 @@
+{
+  "name": "Hay Recruitment Workforce AI Central",
+  "description": "Workforce analytics, automated data cleaning, early warning-sign detection, retention risk scoring and evidence-based retention planning for Hay Recruitment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

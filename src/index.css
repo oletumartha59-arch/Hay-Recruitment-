@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+:root {
+  --amber: #CE7F20;
+  --cream: #EEDFC7;
+  --olive: #607938;
+  --brown: #533416;
+  --surface: #FBF6EC;
+  --ink-on-amber: #2E1B0A;
+  --olive-text: #4A5F28;
+  --muted: #7A6248;
+  --risk-high: #A8482A;
+  --risk-critical: #6E1F1B;
+  --border: #D9C7A5;
+  --guide: #E4D5B7;
+  --leave-tint: #98846F;
+  --amber-tint: #F6E6CF;
+  --olive-tint: #E9EFE0;
+  --sienna-tint: #F6E2DA;
+  --oxblood-tint: #F2DCDC;
+}
+
+@theme {
+  --color-amber-brand: var(--amber);
+  --color-cream-brand: var(--cream);
+  --color-olive-brand: var(--olive);
+  --color-brown-brand: var(--brown);
+  --color-surface-brand: var(--surface);
+  --color-ink-on-amber: var(--ink-on-amber);
+  --color-olive-text: var(--olive-text);
+  --color-muted-brand: var(--muted);
+  --color-risk-high: var(--risk-high);
+  --color-risk-critical: var(--risk-critical);
+  --color-border-brand: var(--border);
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-size: 14px;
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--brown);
+    min-height: 100vh;
+  }
+
+  h1, .font-page-title {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+}
+
+/* Leave diagonal stripe pattern for status chips, bars, and KPI strips */
+.leave-stripe-bg {
+  background-color: var(--leave-tint);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--leave-tint),
+    var(--leave-tint) 4px,
+    var(--cream) 4px,
+    var(--cream) 6px
+  );
+}
+
+.small-sample-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(83, 52, 22, 0.14) 4px,
+    rgba(83, 52, 22, 0.14) 6px
+  );
+}
+
+/* Shared component interaction classes */
+.btn-primary {
+  background-color: var(--amber);
+  color: var(--ink-on-amber);
+  border: 1px solid var(--amber);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: filter 150ms cubic-bezier(0.16, 1, 0.3, 1), transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--brown);
+  border: 1px solid var(--border);
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--cream);
+}
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-surface {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+  html, body {
+    background-color: #ffffff !important;
+    color: var(--brown) !important;
+  }
+  aside, header, .no-print, .floating-assistant-trigger {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .card-surface {
+    background-color: #ffffff !important;
+    break-inside: avoid;
+  }
+}
